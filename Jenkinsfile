@@ -5,7 +5,7 @@ pipeline {
         OPENSHIFT_PROJECT = "jenkins" 
         IMAGE_NAME = "tictacimg"
         GIT_REPO = "https://github.com/snehamanoharan/test.git" 
-        SECRET = "snakegithubtoken"
+        //SECRET = "snakegithubtoken"
         GIT_REF = "dev"
     }
 
@@ -25,7 +25,8 @@ pipeline {
                     """
                   
                     // Deploy the application using OpenShift
-                    sh " oc new-app openshift/nginx~${GIT_REPO} --name=${IMAGE_NAME} --source-secret=${SECRET} --allow-missing-images "
+                   // sh " oc new-app openshift/nginx~${GIT_REPO} --name=${IMAGE_NAME} --source-secret=${SECRET} --allow-missing-images "
+                    sh " oc new-app openshift/nginx~${GIT_REPO} --name=${IMAGE_NAME} --allow-missing-images "
                   
                     //pass git creds to build config and start build again to apply 
                     sh "oc patch bc/${IMAGE_NAME} -p '{\"spec\":{\"source\":{\"git\":{\"uri\":\"${GIT_REPO}\",\"ref\":\"${GIT_REF}\"}}}}'"
