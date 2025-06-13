@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME = "tictacimg"
         GIT_REPO = "https://github.com/snehamanoharan/test.git" 
         //SECRET = "snakegithubtoken"
-        GIT_REF = "dev"
+        GIT_REF = "main"
     }
 
     stages {
