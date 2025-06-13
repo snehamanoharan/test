@@ -4,7 +4,7 @@ pipeline {
     environment {
         OPENSHIFT_PROJECT = "jenkins" 
         IMAGE_NAME = "tictacimg"
-        GIT_REPO = "https://github.com/snehamanoharan/test/new/main" 
+        GIT_REPO = "https://github.com/snehamanoharan/test.git" 
         SECRET = "snakegithubtoken"
         GIT_REF = "dev"
     }
